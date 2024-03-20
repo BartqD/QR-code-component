@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { Outfit } from 'next/font/google'
 
 export const metadata: Metadata = {
 	title: 'QR Code',
-	description: 'QR code to scan', 
+	description: 'QR code to scan',
 }
+
+const outfit = Outfit({ weight: ['400', '700'], subsets: ['latin'] })
 
 export default function RootLayout({
 	children,
@@ -13,7 +16,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body>{children}</body>
+			<body className={outfit.className}>{children}</body>
 		</html>
 	)
 }
