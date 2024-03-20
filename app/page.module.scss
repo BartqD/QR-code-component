@@ -28,20 +28,17 @@
 			text-align: center;
 			width: 28.8rem;
 			height: 12.9rem;
+			margin-top: 2.4rem;
 			&-title {
-				margin: 1.6rem 0 1.6rem 0;
-				padding: 0 1.6rem;
 				font-size: 2.2rem;
 				font-weight: 700;
 				text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 				color: #1f314f;
 			}
 			&-text {
-				width: 25.6rem;
-				height: 5.7rem;
+				padding: 1.6rem 1.6rem 0 1.6rem;
 				font-size: 1.5rem;
 				font-weight: 400;
-				letter-spacing: 0.05rem;
 				color: #7d889e;
 			}
 		}
@@ -54,9 +51,24 @@
 	margin-bottom: 1rem;
 
 	a {
+		position: relative;
 		text-decoration: none;
 		color: hsl(228, 45%, 44%);
-		color: hsl(228, 45%, 44%);
+		transition: text-decoration 0.5s ease-in-out;
+	}
+	a::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background-color: hsl(200, 45%, 44%);
+		transition: width 0.3s ease;
+	}
+
+	a:hover::after {
+		width: 100%;
 	}
 }
 
